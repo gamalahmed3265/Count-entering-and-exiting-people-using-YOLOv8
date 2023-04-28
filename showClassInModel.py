@@ -1,7 +1,7 @@
 def showClass(names:dict):
     mes=""
     for i,name in names.items():
-        mes+=f"{i} -> {name}\n"
+        mes+=f"{name}\n"
     saveInFile(mes)
     
     
@@ -17,3 +17,14 @@ def saveInFile(text:str):
             f.write(text)
     except FileNotFoundError:
         print("The 'docs' directory does not exist")
+
+def showDatainFile():
+    classList=[]
+    try:
+        with open("coco.txt","r") as r:
+            data=r.read()
+            classList=data.split("\n")
+    except FileNotFoundError:
+        print("The 'docs' directory does not exist")
+        
+    return classList

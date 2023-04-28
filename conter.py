@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import cv2 as cv
+from showClassInModel import showDatainFile
 from tracker import *
 
 
@@ -19,7 +20,7 @@ class Conter:
     def __init__(self,video,model):
         self.video=video
         self.model=model
-    
+        self.classList=showDatainFile()
 
             
 
@@ -27,6 +28,7 @@ class Conter:
         cv.namedWindow('RGB')
         cv.setMouseCallback('RGB',RGB)
         
+        print(self.classList)
         cap=cv.VideoCapture(self.video)
         while cap.isOpened():
             rat,frame=cap.read()

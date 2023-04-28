@@ -1,5 +1,6 @@
 
 from conter import *
+from showClassInModel import showClass
 from ultralytics import YOLO
 
 def main():
@@ -7,6 +8,8 @@ def main():
     model="../yolov8s.pt"
     
     model=YOLO(model)
+    # showClass(model.names)
+    
     conter=Conter(video,model)
     conter()
 
